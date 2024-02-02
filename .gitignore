@@ -1,0 +1,8 @@
+*.o
+*.d
+obj
+*.swp
+.DS_*
+._.*
+.vscode
+Fixed
