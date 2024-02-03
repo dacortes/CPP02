@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:40:43 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/03 13:03:35 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:56:38 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ class Fixed
 		Fixed(const int num);
 		Fixed(const float num);
 		Fixed &operator=(const Fixed &fixp);
+		/*
+		 *Arithmetic operators  
+		*/
+		Fixed operator+(const Fixed &fixp);
+		Fixed operator-(const Fixed &fixp);
+		Fixed operator*(const Fixed &fixp);
+		Fixed operator/(const Fixed &fixp);
+		/*
+		 * Comparison operators
+		*/
+		bool	operator>(const Fixed &fixp);
+		bool	operator<(const Fixed &fixp);
+		bool	operator>=(const Fixed &fixp);
+		bool	operator<=(const Fixed &fixp);
 
 		void	setRawBits(int const raw);
 		int		getRawBits(void) const;
