@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:44 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/03 18:56:37 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:00:02 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,16 @@ bool	Fixed::operator>=(const Fixed &fixp)
 bool	Fixed::operator<=(const Fixed &fixp)
 {
 	return (this->toFloat() <= fixp.toFloat());
+}
+
+bool	Fixed::operator==(const Fixed &fixp)
+{
+	return (this->toFloat() == fixp.toFloat());
+}
+
+bool	Fixed::operator!=(const Fixed &fixp)
+{
+	return (this->toFloat() != fixp.toFloat());
 }
 
 /*
