@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:44 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/05 14:59:05 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:02:12 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,11 @@ Fixed::~Fixed(void)
 */
 Fixed::Fixed(Fixed &fixp)
 {
-	//this->fixedPoint = fixp.getRawBits();
 	*this = fixp;
 }
 
 Fixed::Fixed(const Fixed &fixp)
 {
-	//this->fixedPoint = fixp.getRawBits();
 	*this = fixp;
 }
 
@@ -110,7 +108,32 @@ bool	Fixed::operator!=(const Fixed &fixp) const
 {
 	return (this->toFloat() != fixp.toFloat());
 }
-
+/*	Define prefix increment operator  */
+Fixed	&Fixed::operator++(void)
+{
+	this->fixedPoint++;
+	return (*this);
+}
+/*	Define postfix increment operator */
+Fixed	operator++(int)
+{
+	Fixed tmp(*this);
+	++(*this);
+	return (tmp);
+}
+/*	Define prefix decrement operator  */
+Fixed	&Fixed::operator--(void)
+{
+	this->fixedPoint--;
+	return (*this);
+}
+/*	Define postfix decrement operator */
+Fixed	Fixed::operator--(int)
+{
+	Fixed tmp(*this);
+	--*this;
+	return (tmp);
+}
 /*
  * Methods get.
 */

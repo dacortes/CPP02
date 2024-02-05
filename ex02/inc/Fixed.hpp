@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:40:43 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/05 14:58:32 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:37:08 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ class Fixed
 		bool	operator<=(const Fixed &fixp) const;
 		bool	operator==(const Fixed &fixp) const;
 		bool	operator!=(const Fixed &fixp) const;
+		/*	Define prefix increment operator  */
+		Fixed	&operator++(void);
+		/*	Define postfix increment operator */
+		Fixed	operator++(int);
+		/*	Define prefix decrement operator  */
+		Fixed	&operator--(void);
+		/*	Define postfix decrement operator */
+		Fixed	operator--(int);
 		/*
 		 * Members funtions
 		*/
