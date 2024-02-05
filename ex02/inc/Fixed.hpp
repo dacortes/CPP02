@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:40:43 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/03 18:59:13 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/05 06:26:31 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,13 @@ class Fixed
 		bool	operator<=(const Fixed &fixp);
 		bool	operator==(const Fixed &fixp);
 		bool	operator!=(const Fixed &fixp);
-
+		/*
+		 * Members funtions
+		*/
+		static 	Fixed	&min(Fixed &comp1, Fixed &comp2);
+		static	Fixed	&max(Fixed &comp1, Fixed &comp2);
+		static	const Fixed	&min(const Fixed &comp1, const Fixed &comp2);
+		static	const Fixed	&max(const Fixed &comp1, const Fixed &comp2);
 		void	setRawBits(int const raw);
 		int		getRawBits(void) const;
 		float	toFloat(void) const;

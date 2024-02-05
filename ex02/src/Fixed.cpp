@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:44 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/03 19:00:02 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/05 06:33:10 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,30 @@ float	Fixed::toFloat(void) const
 int	Fixed::toInt(void) const
 {
 	return (this->fixedPoint >> this->bits);
+}
+
+/*
+ * Members funtions.
+*/
+static Fixed	&Fixed::min(Fixed &comp1, Fixed &comp2)
+{
+	return (comp1 < comp2 ? *comp1 : *comp2);
+}
+
+static Fixed	&Fixed::max(Fixed &comp1, Fixed &comp2)
+{
+	return (comp1 > comp2 ? *comp1 : *comp2);
+}
+
+
+static const Fixed	&Fixed::min(Fixed const &comp1, const Fixed &comp2)
+{
+	return (comp1 < comp2 ? *comp1 : *comp2);
+}
+
+static const Fixed	&Fixed::max(Fixed const &comp1, const Fixed &comp2)
+{
+	return (comp1 > comp2 ? *comp1 : *comp2);
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj)
