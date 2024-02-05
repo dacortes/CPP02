@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:40:43 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/05 06:26:31 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:58:32 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Fixed
 	public:
 		Fixed(void);
 		~Fixed(void);
+		Fixed(Fixed &fixp);
 		Fixed(const Fixed &fixp);
 		Fixed(const int num);
 		Fixed(const float num);
@@ -40,12 +41,12 @@ class Fixed
 		/*
 		 * Comparison operators
 		*/
-		bool	operator>(const Fixed &fixp);
-		bool	operator<(const Fixed &fixp);
-		bool	operator>=(const Fixed &fixp);
-		bool	operator<=(const Fixed &fixp);
-		bool	operator==(const Fixed &fixp);
-		bool	operator!=(const Fixed &fixp);
+		bool	operator>(const Fixed &fixp) const;
+		bool	operator<(const Fixed &fixp) const;
+		bool	operator>=(const Fixed &fixp) const;
+		bool	operator<=(const Fixed &fixp) const;
+		bool	operator==(const Fixed &fixp) const;
+		bool	operator!=(const Fixed &fixp) const;
 		/*
 		 * Members funtions
 		*/
