@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:40:43 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/05 18:37:08 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/06 08:36:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,21 @@ class Fixed
 		int	fixedPoint;
 		static const int bits = 8;
 	public:
+		/*
+		 * Orthodox Canonical Form
+		*/
 		Fixed(void);
 		~Fixed(void);
 		Fixed(Fixed &fixp);
 		Fixed(const Fixed &fixp);
-		Fixed(const int num);
-		Fixed(const float num);
 		Fixed &operator=(const Fixed &fixp);
 		/*
-		 *Arithmetic operators  
+		 * Overloading constructors
+		*/
+		Fixed(const int num);
+		Fixed(const float num);
+		/*
+		 * Arithmetic operators  
 		*/
 		Fixed operator+(const Fixed &fixp);
 		Fixed operator-(const Fixed &fixp);

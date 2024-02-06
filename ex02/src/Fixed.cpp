@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:44 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/05 19:02:12 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/06 08:38:35 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ Fixed::Fixed(const Fixed &fixp)
 	*this = fixp;
 }
 
+/*
+ * Overloading constructors
+*/
 Fixed::Fixed(const int num)
 {
 	this->fixedPoint = (num << this->bits);
@@ -88,7 +91,6 @@ bool	Fixed::operator<(const Fixed &fixp) const
 	return (this->toFloat() < fixp.toFloat());
 }
 
-
 bool	Fixed::operator>=(const Fixed &fixp) const
 {
 	return (this->toFloat() >= fixp.toFloat());
@@ -108,25 +110,29 @@ bool	Fixed::operator!=(const Fixed &fixp) const
 {
 	return (this->toFloat() != fixp.toFloat());
 }
+
 /*	Define prefix increment operator  */
 Fixed	&Fixed::operator++(void)
 {
 	this->fixedPoint++;
 	return (*this);
 }
+
 /*	Define postfix increment operator */
-Fixed	operator++(int)
+Fixed	Fixed::operator++(int)
 {
 	Fixed tmp(*this);
 	++(*this);
 	return (tmp);
 }
+
 /*	Define prefix decrement operator  */
 Fixed	&Fixed::operator--(void)
 {
 	this->fixedPoint--;
 	return (*this);
 }
+
 /*	Define postfix decrement operator */
 Fixed	Fixed::operator--(int)
 {
@@ -134,6 +140,7 @@ Fixed	Fixed::operator--(int)
 	--*this;
 	return (tmp);
 }
+
 /*
  * Methods get.
 */
@@ -178,7 +185,6 @@ Fixed	&Fixed::max(Fixed &comp1, Fixed &comp2)
 	return (comp1 > comp2 ? comp1 : comp2);
 }
 
-
 const Fixed	&Fixed::min(const Fixed &comp1, const Fixed &comp2)
 {
 	return (comp1 < comp2 ? comp1 : comp2);
@@ -187,12 +193,6 @@ const Fixed	&Fixed::min(const Fixed &comp1, const Fixed &comp2)
 const Fixed	&Fixed::max(const Fixed &comp1, const Fixed &comp2)
 {
 	return (comp1 > comp2 ? comp1 : comp2);
-}
-
-std::ostream	&operator<<(std::ostream &os, Fixed &obj)
-{
-	os << obj.toFloat();
-	return (os);
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj)
