@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:31:06 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/06 14:14:17 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:29:43 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	printf_value(std::string msg_true, std::string msg_false,
 	else
 		std::cout << T << msg_false<< "\nvalue 1: " << E
 			<< foo << T << "\nvalue 2: " << E<< tmp << std::endl;
+	std::cout << O << "val1 mem: " << E << "\033[1m" << &foo << E << std::endl;
+	std::cout << O << "val2 mem: " << E << "\033[1m" << &tmp << E << std::endl;
 }
 
 void	show_operators(Fixed foo)
@@ -63,7 +65,15 @@ void	show_operators(Fixed foo)
 	std::cout << "\033[1mtest <" << E << std::endl;
 	printf_value("parameter one is greater than parameter two",
 			"parameter one is less than parameter two", foo, tmp, (foo < tmp));
-
+	std::cout << "-----------------------------------\n";
+	std::cout << "\033[1mtest >=" << E << std::endl;
+	printf_value("parameter one is greater than or equal to two",
+			"parameter one is less than parameter two", foo, tmp, (foo >= tmp));
+	std::cout << "-----------------------------------\n";
+	std::cout << "\033[1mtest <=" << E << std::endl;
+	printf_value("parameter one is less than or equal",
+			"parameter one is greater than or equal to two",
+			foo, tmp, (foo <= tmp));
 }
 
 int	main(void)
