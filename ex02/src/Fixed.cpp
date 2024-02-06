@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:44 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/06 08:38:35 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/06 09:23:15 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,6 @@ Fixed	Fixed::operator--(int)
 */
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixedPoint);
 }
 
@@ -155,7 +154,6 @@ int	Fixed::getRawBits(void) const
 */
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->fixedPoint = raw;
 }
 
