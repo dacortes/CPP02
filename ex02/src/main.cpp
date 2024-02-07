@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:31:06 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/06 16:29:43 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:45:57 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 /*                            COLORS                                          */
 /******************************************************************************/
 
-# define E "\033[m"        //end
-# define R "\033[1;31m"    //red
-# define G "\033[1;32m"    //green
-# define Y "\033[1;33m"    //yellow
-# define B "\033[1;34m"    //blue
-# define T "\033[1m\033[1;35m"	   //Turquesa
-# define C "\033[1;36m"    //Cyan
-# define O "\033[1m\033[38;5;208m" //orange
-# define F "\033[38;5;128m"  //purple
+# define E "\033[m"					//end
+# define R "\033[1;31m"    			//red
+# define G "\033[1;32m"    			//green
+# define Y "\033[1;33m"    			//yellow
+# define B "\033[1;34m"    			//blue
+# define T "\033[1m\033[1;35m"		//Turquesa
+# define C "\033[1;36m"				//Cyan
+# define O "\033[1m\033[38;5;208m"	//orange
+# define F "\033[38;5;128m"			//purple
 
 /******************************************************************************/
 /*                            FUNCTIONS                                       */
@@ -76,11 +76,34 @@ void	show_operators(Fixed foo)
 			foo, tmp, (foo <= tmp));
 }
 
+void	show_increment_decrement_operator(Fixed &foo)
+{
+	std::cout << "-----------------------------------\n"
+		<< "	TEST INCREMENT && DECREMENT\n" << "-----------------------------------\n";
+	std::cout << "-----------------------------------\n";
+	std::cout << O << "value: " << E << foo << std::endl;
+	std::cout << O << "prefix increment value: " << E << ++foo << std::endl;
+	foo = 10;
+	std::cout << O << "prostfix increment value: " << E << foo++ << std::endl;
+	std::cout << O << "value: " << E << foo << std::endl;
+	std::cout << O << "prefix decrement value: " << E << --foo << std::endl;
+	std::cout << O << "prefix decrement value: " << E << --foo << std::endl;
+	foo = 10;
+	std::cout << O << "prostfix decrement value: " << E << foo-- << std::endl;
+	std::cout << O << "prostfix decrement value: " << E << foo-- << std::endl;
+	std::cout << O << "val: " << E << "\033[1m" << &foo << E << std::endl;
+}
+
 int	main(void)
 {
 	Fixed a(10);
+	Fixed b(20);
 	
 	show_operators(a);
+	show_increment_decrement_operator(a);
+	a = 15;
+	std::cout << O << "value max: " << E << Fixed::max (a, b) << std::endl;
+	std::cout << O << "value min: " << E << Fixed::min (a, b) << std::endl;
 	return (EXIT_SUCCESS);
 }
 
